@@ -2,13 +2,16 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox fx:controller="controller.ApplicationController"  prefHeight="720.0" prefWidth="960.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<VBox prefHeight="720.0" prefWidth="960.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ApplicationController">
   <children>
     <AnchorPane fx:id="mainPane" maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
          <children>
@@ -17,9 +20,28 @@
                   <Font name="System Bold" size="12.0" />
                </font>
             </Label>
-            <Button fx:id="browseOutButton" layoutX="5.0" layoutY="25.0" mnemonicParsing="false" onAction="#browseOutButtonAction" prefHeight="25.0" prefWidth="75.0" text="Выбрать" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="25.0" />
-            <TextField fx:id="browseOutField" disable="true" layoutX="80.0" layoutY="25.0" AnchorPane.leftAnchor="85.0" AnchorPane.rightAnchor="5.0"/>
+            <Button fx:id="browseOutButton" layoutX="5.0" layoutY="25.0" mnemonicParsing="false" onAction="#browseOutButtonAction" prefHeight="25.0" prefWidth="135.0" text="Выбрать" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="25.0" />
+            <TextField fx:id="browseOutField" disable="true" layoutX="80.0" layoutY="25.0" AnchorPane.leftAnchor="160.0" AnchorPane.rightAnchor="5.0" />
             <Separator layoutX="53.0" layoutY="57.0" prefWidth="200.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="60.0" />
+            <Label layoutX="5.0" layoutY="72.0" text="Режим работы:" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="75.0">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <RadioButton fx:id="pdfLinks" layoutX="15.0" layoutY="103.0" mnemonicParsing="false" selected="true" text="Ссылки на PDF" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="100.0">
+               <toggleGroup>
+                  <ToggleGroup fx:id="workMode" />
+               </toggleGroup>
+            </RadioButton>
+            <RadioButton fx:id="driveFolder" layoutX="15.0" layoutY="123.0" mnemonicParsing="false" text="Папка Google Drive" toggleGroup="$workMode" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="125.0" />
+            <Label fx:id="linksLabel" layoutX="168.0" layoutY="75.0" text="Ссылки:" AnchorPane.leftAnchor="170.0" AnchorPane.topAnchor="75.0">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <TextArea fx:id="linksArea" layoutX="169.0" layoutY="100.0" prefHeight="290.0" prefWidth="785.0" AnchorPane.bottomAnchor="40.0" AnchorPane.leftAnchor="160.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="100.0" />
+            <Separator layoutX="158.0" layoutY="78.0" orientation="VERTICAL" prefHeight="290.0" prefWidth="0.0" AnchorPane.bottomAnchor="40.0" AnchorPane.leftAnchor="150.0" AnchorPane.topAnchor="100.0" />
+            <Button fx:id="getButton" layoutX="17.0" layoutY="681.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="135.0" text="Получить" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" />
          </children>
     </AnchorPane>
   </children>
