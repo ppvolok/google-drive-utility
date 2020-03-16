@@ -10,7 +10,8 @@ public class ApplicationLauncher extends Application {
 
     @Override
     public void start(Stage primaryStage) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/window.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/window.fxml"));
+        Parent root = loader.load();
 
         primaryStage.setScene(new Scene(root));
         primaryStage.setTitle("Google Drive PDF Utility");
